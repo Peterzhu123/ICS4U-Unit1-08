@@ -1,0 +1,54 @@
+/****************************************************************************
+ *
+ * Created by: Peter Zhu
+ * Created on: Feb 2018
+ * This program determines the max and min values 
+ *
+ *************************************************************************
+import java.util.Random;
+
+public class max {
+  
+        public static void main(String[] args) {
+                 
+              Random n = new Random();
+              int num[ ] = new int [10];
+              num[0] = n.nextInt(99);
+              num[1] = n.nextInt(99);
+              num[2] = n.nextInt(99);
+              num[3] = n.nextInt(99);
+              num[4] = n.nextInt(99);
+              num[5] = n.nextInt(99);
+              num[6] = n.nextInt(99);
+              num[7] = n.nextInt(99);
+              num[8] = n.nextInt(99);
+              num[9] = n.nextInt(99);
+              
+              System.out.println(num[0]);
+              System.out.println(num[1]);
+              System.out.println(num[2]);
+              System.out.println(num[3]);
+              System.out.println(num[4]);
+              System.out.println(num[5]);
+              System.out.println(num[6]);
+              System.out.println(num[7]);
+              System.out.println(num[8]);
+              System.out.println(num[9]);
+              
+              int m = num[0];
+              int s= num[0];
+              
+              for (int i = 1; i< num.length; i++){
+                      if(num[i] < m){
+                      m = num[i];                           
+                      }                      
+                      for (int q = 1; q< num.length; q++){
+                             if(num[i] > s){
+                             s = num[i]; 
+                             }                         
+                      }                                    
+              }
+              System.out.println("The max value is :     " + m);
+              System.out.println("The min value is :     " + s);
+        }               
+}
