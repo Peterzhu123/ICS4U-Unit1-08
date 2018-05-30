@@ -1,54 +1,42 @@
+import java.util.Random;
+
 /****************************************************************************
  *
  * Created by: Peter Zhu
- * Created on: Feb 2018
- * This program determines the max and min values 
+ * Created on: May
+ * This is a program about  find max and min number is the range of 100
  *
- *************************************************************************
-import java.util.Random;
+ ****************************************************************************/
+public class MaxAndMin {
 
-public class max {
-  
-        public static void main(String[] args) {
-                 
-              Random n = new Random();
-              int num[ ] = new int [10];
-              num[0] = n.nextInt(99);
-              num[1] = n.nextInt(99);
-              num[2] = n.nextInt(99);
-              num[3] = n.nextInt(99);
-              num[4] = n.nextInt(99);
-              num[5] = n.nextInt(99);
-              num[6] = n.nextInt(99);
-              num[7] = n.nextInt(99);
-              num[8] = n.nextInt(99);
-              num[9] = n.nextInt(99);
-              
-              System.out.println(num[0]);
-              System.out.println(num[1]);
-              System.out.println(num[2]);
-              System.out.println(num[3]);
-              System.out.println(num[4]);
-              System.out.println(num[5]);
-              System.out.println(num[6]);
-              System.out.println(num[7]);
-              System.out.println(num[8]);
-              System.out.println(num[9]);
-              
-              int m = num[0];
-              int s= num[0];
-              
-              for (int i = 1; i< num.length; i++){
-                      if(num[i] < m){
-                      m = num[i];                           
-                      }                      
-                      for (int q = 1; q< num.length; q++){
-                             if(num[i] > s){
-                             s = num[i]; 
-                             }                         
-                      }                                    
-              }
-              System.out.println("The max value is :     " + m);
-              System.out.println("The min value is :     " + s);
-        }               
+	public static void main(String[] args) {
+		Random rand = new Random();
+		int array [] = new int[10];
+		
+		for(int number = 0; number < array.length;number++) {
+			array[number] = (int)(Math.random()*99);
+		    System.out.println(array[number]);
+		}
+		
+		int minValue = array[0];
+		int maxValue = array[0];
+		
+		for(int min = 1; min < array.length; min++) {
+			if(array[min] < minValue) {
+				minValue = array[min];
+			}
+
+			for(int max = 1; max < array.length; max++) {
+				if(array[min] > maxValue) {
+					maxValue = array[min];
+				}	
+			
+			}
+
+	    }
+		
+		System.out.println("The min Value is: " + minValue);
+		System.out.println("The max Value is: " + maxValue);
+
+   }
 }
